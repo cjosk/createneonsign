@@ -1,118 +1,504 @@
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Nouarch - Create Your Own Light!</title>
-    <meta name="description" content="Neon Pleksi® Kendi Işığını Yarat!">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/create-neon-sign/images/favicon.png">
+    <script type="text/javascript">
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="js/jquery-ui.min.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css?v=3" rel="stylesheet" type="text/css">
+ </script>
+ 
+ <!-- Basic Page Needs -->
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <title>Nouarch - Create Your Own Light! </title>
+ <meta name="description" content="Neon Pleksi&reg; Kendi Işığını Yarat!">
+ <meta name="keywords" content="Neon">
+ <link rel="icon" type="image/png" href="/create-neon-sign/images/favicon.png">
+ <!-- Mobile Specific Metas -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+ 
+ <!-- CSS -->
+ <link href="css/animatenew.css" rel="stylesheet" type="text/css">
+ <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"><!-- BOOTSTRAP GRID -->
+ <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link href="js/jquery-ui.min.css" rel="stylesheet" type="text/css">
+ 
+
+        <link href="css/style.css?v=3" rel="stylesheet" type="text/css">
     <link href="css/color.css?v=3" rel="stylesheet" type="text/css">
     <link href="css/custom.css?v=3" rel="stylesheet" type="text/css">
-    <link href="css/magicscroll.css" rel="stylesheet" type="text/css">
+    <link href="css/custompage.css?v=3" rel="stylesheet" type="text/css">
+    <link href="css/responses.css?v=3" rel="stylesheet" type="text/css">
+    <link href="css/header.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <link href="css/new-style.css" rel="stylesheet" type="text/css">
+<link href="../css?family=Oswald:300,400,700" rel="stylesheet" crossorigin="anonymous">
+<link href="../css-1?family=Poppins:300,400,500,600,700" rel="stylesheet" crossorigin="anonymous">
+<link rel="stylesheet" href="css/lightbox.min.css" type="text/css" media="screen">
 
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css-1?family=Poppins:300,400,500,600,700" rel="stylesheet">
+<!-- Javascript  -->
+<script src="js/moment.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script> <!-- Jquery Library Call -->
+<script src="js/jquery-ui.min.js"></script> <!-- Jquery Library Call -->
+<script src="js/jquery.ui.touch-punch.min.js"></script> <!-- Jquery Library Call -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script> <!-- UI -->
+<script src="js/platform.js"></script>
+<script src="js/html2canvas.min.js"></script>
+<script src="js/dom-to-image.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="../scrollreveal%404.0.0/dist/scrollreveal.min.js"></script>
+<!-- Added to support Internet Explorer -->
+<script src="../ajax/libs/bluebird/3.3.4/bluebird.min.js"></script>
+
+<script data-adroll="magento-adroll-pixel" type="text/javascript"></script>	
 </head>
 <body class="body_m">
+    
 
-    <div class="creator-container">
-        <div class="controls-panel">
-            <h1>Create Your Own Light!</h1>
-            <p class="subtitle">After you decide on your design, you can contact us again via etsy and send the screenshot of the design!</p>
-
-            <div class="control-group">
-                <label>YOUR TEXT</label>
-                <textarea class="form-control" rows="2" id="input_text" placeholder="Buraya Yazın! Yeni satıra geçmek için Enter'a tıklayın." oninput="updateText();">Create It Yourself!</textarea>
-            </div>
-
-            <div class="control-group">
-                <label>CHOOSE FONT</label>
-                <div class="font-list-container">
-                    <ul class="font_style">
-                        <li style="font-family: Alexa;" data-font="Alexa" onclick="setFont('Alexa',2,this);">Alexa</li>
-                        <li style="font-family: Barcelona;" data-font="Barcelona" onclick="setFont('Barcelona',1,this);">Barcelona</li>
-                        <li style="font-family: Bayview;" data-font="Bayview" onclick="setFont('Bayview',1,this);">Bayview</li>
-                        <li style="font-family: Amsterdam;" data-font="Amsterdam" onclick="setFont('Amsterdam',2,this);">Amsterdam</li>
-                        <li style="font-family: Greenworld;" data-font="Greenworld" onclick="setFont('Greenworld',1,this);">Greenworld</li>
-                        <li style="font-family: NewCursive;" data-font="NewCursive" onclick="setFont('NewCursive',1,this);">NewCursive</li>
-                        <li style="font-family: Vintage;" data-font="Vintage" onclick="setFont('Vintage',1,this);">Vintage</li>
-                        <li style="font-family: Venetian;" data-font="Venetian" onclick="setFont('Venetian',1,this);">Venetian</li>
-                        <li style="font-family: Amanda;" data-font="Amanda" onclick="setFont('Amanda',1,this);">Amanda</li>
-                        <li style="font-family: Austin;" data-font="Austin" onclick="setFont('Austin',2,this);">Austin</li>
-                        <li style="font-family: Beachfront;" data-font="Beachfront" onclick="setFont('Beachfront',0,this);">Beachfront</li>
-                        <li style="font-family: Chelsea;" data-font="Chelsea" onclick="setFont('Chelsea',2,this);">Chelsea</li>
-                        <li style="font-family: Freehand;" data-font="Freehand" onclick="setFont('Freehand',2,this);">Freehand</li>
-                        <li style="font-family: Freespirit;" data-font="Freespirit" onclick="setFont('Freespirit',2,this);">Freespirit</li>
-                        <li style="font-family: LoveNote;" data-font="LoveNote" onclick="setFont('LoveNote',1,this);">LoveNote</li>
-                        <li class="active" style="font-family: Neonscript;" data-font="Neonscript" onclick="setFont('Neonscript',2,this);">Neonscript</li>
-                        <li style="font-family: Northshore;" data-font="Northshore" onclick="setFont('Northshore',2,this);">Northshore</li>
-                        <li style="font-family: Royalty;" data-font="Royalty" onclick="setFont('Royalty',2,this);">Royalty</li>
-                        <li style="font-family: Rocket;" data-font="Rocket" onclick="setFont('Rocket',2,this);">Rocket</li>
-                        <li style="font-family: Signature;" data-font="Signature" onclick="setFont('Signature',1,this);">Signature</li>
-                        <li style="font-family: Sorrento;" data-font="Sorrento" onclick="setFont('Sorrento',2,this);">Sorrento</li>
-                        <li style="font-family: WildScript;" data-font="WildScript" onclick="setFont('WildScript',2,this);">WildScript</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label>CHOOSE COLOR</label>
-                <ul id="color_table" class="color-selector">
-                    <li onclick="setColor('#e1e3e6', this);"><img src="icons/icon_beyaz.png" alt="beyaz-white-neon-icon"><p>Beyaz</p></li>
-                    <li onclick="setColor('#fffdcf', this);"><img src="icons/icon_gunisigi.png" alt="gun-isigi-neon-icon"><p>Gün Işığı</p></li>
-                    <li onclick="setColor('#ff8d02', this);"><img src="icons/icon_amber.png" alt="amber-orange-neon-icon"><p>Amber</p></li>
-                    <li onclick="setColor('#cd2e1f', this);"><img src="icons/icon_kirmizi.png" alt="kirmizi-red-neon-icon"><p>Kırmızı</p></li>
-                    <li class="active" onclick="setColor('#ff5ce8', this);"><img src="icons/icon_pembe.png" alt="pembe-pink-neon-icon"><p>Pembe</p></li>
-                    <li onclick="setColor('#8c59ff', this);"><img src="icons/icon_mor.png" alt="mor-purple-neon-icon"><p>Mor</p></li>
-                    <li onclick="setColor('#0274fc', this);"><img src="icons/icon_mavi.png" alt="mavi-blue-neon-icon"><p>Mavi</p></li>
-                    <li onclick="setColor('#24b7de', this);"><img src="icons/icon_gokmavisi.png" alt="gokmavisi-skyblue-neon-icon"><p>Gök Mavisi</p></li>
-                    <li onclick="setColor('#0bd748', this);"><img src="icons/icon_yesil.png" alt="yesil-green-neon-icon"><p>Yeşil</p></li>
-                </ul>
-            </div>
-            
-             <div class="footer-controls">
-                <div class="price-section">
-                    <span>Price</span>
-                    <b id="price_display">$0.00</b> 
-                </div>
-                <button class="add-to-cart-btn">ADD TO CART</button>
-            </div>
-        </div>
-
-        <div class="preview-panel">
-            <div class="demo_text" style="background-image: url('images/background/background1.jpg');">
-                <div id="text" class='text_show draggable' style='font-family: Neonscript; font-size: 95px; white-space: nowrap; line-height: 115%; text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(255, 92, 232) 0px 0px 20px, rgb(255, 92, 232) 0px 0px 30px, rgb(255, 92, 232) 0px 0px 40px, rgb(255, 92, 232) 0px 0px 55px, rgb(255, 92, 232) 0px 0px 75px;'>Create It Yourself!</div>
-                <a class="demo_on_off offswitch standard" onclick="changeAppearance('demo_box_side');"></a>
-            </div>
-
-            <div class="MagicScroll" data-options="height: 146; mode: carousel; draggable: true;">
-                <a onclick="setBG('images/background/bg22.png',1);"><img src="images/background/bg22.png"></a>
-                <a onclick="setBG('images/background/background2.jpg',2);"><img src="images/background/background2.jpg"></a>
-                <a onclick="setBG('images/background/background3.jpg',3);"><img src="images/background/background3.jpg"></a>
-                <a onclick="setBG('images/background/background4.jpg',4);"><img src="images/background/background4.jpg"></a>
-                <a onclick="setBG('images/background/background5.jpg',5);"><img src="images/background/background5.jpg"></a>
-                <a onclick="setBG('images/background/background6.jpg',6);"><img src="images/background/background6.jpg"></a>
-                <a onclick="setBG('images/background/background7.jpg',7);"><img src="images/background/background7.jpg"></a>
-                <a onclick="setBG('images/background/background8.jpg',8);"><img src="images/background/background8.jpg"></a>
-            </div>
-        </div>
-    </div>
+  <div class="loader-back-image" onclick="closeImageWrapper();">
+    <div class="image_wrapper wrapper"><button class="wrapper_cancel" onclick="closeImageWrapper();"><i class="fa fa-times"></i></button><img></div>
+  </div>
 
 
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.ui.touch-punch.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/magicscroll.js"></script>
-    <script src="js/createneonscript_v2.min.js"></script>
-    <script src="js/multiline.js"></script>
 
-</body>
+
+
+ 
+ 
+          <div class="clearfix"></div>
+
+<!-- dd - Save Design Changes - 22-04-2021 start -->
+<!-- dd - Save Design Changes - 22-04-2021 end -->
+<div class="clearfix"></div>
+<div class="custom body_m">
+<section>
+  <div class="container" style="padding-left: 0;">
+    <div class="text-center" style="position: relative;">
+                  <div id="text" data-lineh="120%" style="padding: 10px 0px 50px;left: 15px;height: fit-content;white-space: nowrap;
+      width: fit-content;clear:both;float:left;font-family: Neonscript;z-index:-1;line-height:120%;position:absolute;margin:0;display:inline-block;">Your Text    </div>
+    <div class="col-xs-12 top-logo" style="background:white;">
+      <section id="heading-section" class="standard-order-head">    
+       <div class="DskOnly">  
+        <h2>Create Your Own Light!</h2>    
+        <h3>After you decide on your design, you can contact us again via etsy and send the screenshot of the design!</h3>
+      </div>
+      <div class="MobOnly"> 
+        <h2 style="font-size: 30px;">Create Your Own Light!</h2>    
+        <h3 style="font-size: 18px; letter-spacing:1px;">After you decide on your design, you can contact us again via etsy and send the screenshot of the design!</h3>
+      </div>
+    </section>
+
+  </div>
+  <div class="col-md-4 col-md-3-5 form_wrapper" style="background:white;">
+    <div class="make_style_form">
+      <div>
+        <ul class="nav nav-tabs custom_tab">
+          <li class="active"><a onclick="swithchtap('text_input',this)">Text</a></li>
+          <li><a onclick="swithchtap('font_style',this)">Font</a></li>
+          <li><a onclick="swithchtap('color_style',this)">Color</a></li>
+          <!-- <li><a onclick="swithchtap('bg_style',this)">Background</a></li> -->
+        </ul>
+        <div class="option_group_custom">
+          <div class="form-group text_input active">
+                        <!-- <label style="text-transform: uppercase;">
+                            Input text
+                          </label> -->
+                          <!-- dd - Save Design Changes - 22-04-2021 start-->
+                                                    <textarea class="form-control" rows="2" id="input_text" style="font-size:1.1em;" placeholder="Buraya Yazın! 
+Yeni satıra geçmek için Enter'a tıklayın." oninput="updateText();"></textarea>
+                          <div class="col-xs-12 align_wrap disabled" style="display:none; margin-top: 10px; margin-bottom: 5px;">
+                            <div data-id="1" class="col-xs-4 align_icon left_icon" onclick="aligntext('left',this);" style="width:32%" data-text-align="Left"></div>
+                            <div data-id="2" class="col-xs-4 align_icon center_icon active" onclick="aligntext('center',this);" style="width:32%" data-text-align="Centered"></div>
+                            <div data-id="3" class="col-xs-4 align_icon right_icon" onclick="aligntext('right',this);" style="width:32%" data-text-align="Right"></div>
+							
+							
+                            <!-- dd - Save Design Changes - 22-04-2021 end -->
+                          </div>                                                
+                          <!-- 21-01-21 rush order section -->
+                                                    <!-- 21-01-21 rush order section -->
+                          
+                        </div>
+                        
+                        <div class="clearfix"></div>
+                        <div class="form-group font_style">
+                          <label style="text-transform: uppercase;">
+                            Choose Font
+                          </label>
+                          <ul> 
+                            <!-- dd - Save Design Changes - 22-04-2021 start -->
+                            <li class="col-xs-3" style="font-family: Alexa; font-size:160%;" data-desk="80" data-mob="75" data-lineh="94%" data-font-lineh="80" data-font-id="10" data-nosize="" data-font="Alexa" onclick="setFont('Alexa',2,this);"><p>Alexa</p></li>
+						
+                            <li class="col-xs-3" style="font-family: Barcelona;font-size:100%;position: relative; top: -1px" data-desk="70" data-font-id="15" data-mob="55" data-lineh="150%" data-font-lineh="115.5" data-nosize="" data-font="Barcelona" onclick="setFont('Barcelona',1,this);"><p>Barcelona</p></li>							
+							<li class="col-xs-3" style="font-family: Bayview; font-size:200%;" data-desk="105" data-mob="90" data-font-id="11" data-lineh="90%" data-font-lineh="105" data-nosize="" data-font="Bayview" onclick="setFont('Bayview',1,this);"><p>Bayview</p></li>	
+                            <li class="col-xs-3" style="font-family: Amsterdam;font-size:140%;position: relative; top: -4px" data-desk="88" data-font-id="12" data-mob="65" data-lineh="105%" data-font-lineh="97" data-nosize="" data-font="Amsterdam" onclick="setFont('Amsterdam',2,this);"><p>Amsterdam</p></li>
+                            <li class="col-xs-3" style="font-family: Greenworld;font-size:185%;position: relative; top: -2px" data-font-id="13" data-desk="100" data-mob="93" data-lineh="84%" data-font-lineh="90" data-nosize="" data-font="Greenworld" onclick="setFont('Greenworld',1,this);"><p>Greenworld</p></li>							
+                            <li class="col-xs-3" style="font-family: NewCursive;font-size:160%" data-desk="100" data-mob="91" data-font-id="14" data-lineh="87%" data-font-lineh="90" data-nosize="" data-font="NewCursive" onclick="setFont('NewCursive',1,this);"><p>NewCursive</p></li>							
+
+                            <li class="col-xs-3" style="font-family: Vintage;font-size:130%;position: relative; top: -3px" data-desk="75" data-font-id="16" data-mob="72" data-lineh="110%" data-font-lineh="90" data-nosize="" data-font="Vintage" onclick="setFont('Vintage',1,this);"><p>Vintage</p></li>
+                            <li class="col-xs-3" style="font-family: Venetian;font-size:160%;position: relative; top: -3px" data-desk="80" data-font-id="46" data-mob="72" data-lineh="100%" data-font-lineh="90" data-nosize="" data-font="Venetian" onclick="setFont('Venetian',1,this);"><p>Venetian</p></li>							
+                            <li class="col-xs-3" style="font-family: Amanda;font-size:150%" data-desk="80" data-mob="73" data-lineh="125%" data-font-lineh="104" data-nosize="" data-font-id="17" data-font="Amanda" onclick="setFont('Amanda',1,this);"><p>Amanda</p></li>						
+                            <li class="col-xs-3" style="font-family: Austin;font-size:220%; position: relative; top: -4px" data-lineh="76%" data-font-lineh="103.5" data-font-id="21" data-nosize="" data-font="Austin" data-desk="115" data-mob="105" onclick="setFont('Austin',2,this);"><p>Austin</p></li>	
+											
+                            <li class="col-xs-3" style="font-family: Beachfront;font-size:130%;position: relative; top: -2px" data-desk="73" data-font-id="26" data-mob="65" data-lineh="120%" data-font-lineh="94.6" data-nosize="" data-font="Beachfront" onclick="setFont('Beachfront',0,this);"><p>Beachfront</p></li>
+							<li class="col-xs-3" style="font-family: Chelsea;font-size:200%" data-desk="110" data-mob="98" data-lineh="100%" data-font-lineh="110" data-font-id="19" data-nosize="" data-font="Chelsea" onclick="setFont('Chelsea',2,this);"><p>Chelsea</p></li>
+                            <li class="col-xs-3" style="font-family: Freehand;font-size:160%; position: relative; top: -1px" data-lineh="97%" data-font-lineh="108" data-font-id="23" data-nosize="" data-font="Freehand" data-desk="90" data-mob="85" onclick="setFont('Freehand',2,this);"><p>Freehand</p></li>														
+                            <li class="col-xs-3" style="font-family: Freespirit;font-size:85%" data-desk="47" data-mob="49" data-lineh="180%" data-font-lineh="90" data-font-id="18" data-nosize="" data-font="Freespirit" onclick="setFont('Freespirit',2,this);"><p>Freespirit</p></li>							
+                            <li class="col-xs-3" style="font-family: LoveNote;font-size:155%" data-desk="70" data-mob="66" data-lineh="100%" data-font-lineh="84" data-font-id="24" data-nosize="" data-font="LoveNote" onclick="setFont('LoveNote',1,this);"><p>LoveNote</p></li>
+                            <li class="col-xs-3 active" style="font-family: Neonscript;font-size:170%" data-desk="95" data-mob="80" data-lineh="115%" data-font-lineh="114.5" data-font-id="22" data-nosize="" data-font="Neonscript" onclick="setFont('Neonscript',2,this);"><p>Neonscript</p></li>						
+                            <li class="col-xs-3" style="font-family: Northshore;font-size:150%;position: relative; top: 2px" data-desk="93" data-font-id="25" data-mob="83" data-lineh="115%" data-font-lineh="111.5" data-nosize="" data-font="Northshore" onclick="setFont('Northshore',2,this);"><p>Northshore</p></li>
+                            <li class="col-xs-3" style="font-family: Royalty;font-size:140%;" data-desk="68" data-mob="56" data-lineh="130%" data-font-lineh="88.5" data-font-id="27" data-nosize="" data-font="Royalty" onclick="setFont('Royalty',2,this);"><p>Royalty</p></li>							
+                            <li class="col-xs-3" style="font-family: Rocket;font-size:110%;" data-desk="50" data-mob="45" data-lineh="160%" data-font-lineh="85" data-nosize="" data-font-id="28" data-font="Rocket" onclick="setFont('Rocket',2,this);"><p>Rocket</p></li>									
+                            <li class="col-xs-3" style="font-family: Signature;font-size:180%;position: relative; top: -3px" data-lineh="95%" data-font-lineh="105" data-font-id="49" data-nosize="" data-font="Signature" data-desk="100" data-mob="85" onclick="setFont('Signature',1,this);"><p>Signature</p></li>		
+                            <li class="col-xs-3" style="font-family: Sorrento;font-size:130%;" data-lineh="130%" data-font-lineh="120" data-font-id="20" data-nosize="" data-font="Sorrento" data-desk="70" data-mob="60" onclick="setFont('Sorrento',2,this);"><p>Sorrento</p></li>
+				
+                            <li class="col-xs-3" style="font-family: WildScript;font-size:180%;position: relative;" data-desk="105" data-mob="98" data-font-id="29" data-lineh="105%" data-font-lineh="115.5" data-nosize="" data-font="WildScript" onclick="setFont('WildScript',2,this);"><p>WildScript</p></li>							
+                            <li class="col-xs-3" style="font-family: Avante;font-size:120%" data-desk="75" data-mob="61" data-lineh="97%" data-font-lineh="90" data-nosize="" data-font-id="30" data-font="Avante" onclick="setFont('Avante',0,this);"><p>Avante</p></li>
+						     <li class="col-xs-3" style="font-family: Buttercup;font-size:190%;" data-desk="120" data-mob="82" data-lineh="90%" data-font-lineh="114" data-font-id="35" data-nosize="" data-font="Buttercup" onclick="setFont('Buttercup',0,this);"><p>Buttercup</p></li>	
+                            <li class="col-xs-3" style="font-family: ClassicType;" data-desk="65" data-mob="55" data-lineh="99%" data-font-lineh="78" data-nosize="" data-font-id="33" data-font="ClassicType" onclick="setFont('ClassicType',0,this);"><p>ClassicType</p></li>
+                            <li class="col-xs-3" style="font-family: Typewriter;font-size:105%;" data-desk="70" data-mob="58" data-lineh="92%" data-font-lineh="84" data-font-id="34" data-nosize="" data-font="Typewriter" onclick="setFont('Typewriter',0,this);"><p>Typewriter</p></li>
+					
+                            <li class="col-xs-3" style="font-family: Melbourne;font-size:110%;" data-desk="70" data-mob="62" data-lineh="100%" data-font-lineh="77" data-font-id="36" data-nosize="" data-font="Melbourne" onclick="setFont('Melbourne',0,this);"><p>Melbourne</p></li>
+                            <li class="col-xs-3" style="font-family: NeoTokyo;font-size:120%;" data-desk="73" data-mob="61" data-lineh="105%" data-font-lineh="87.5" data-font-id="37" data-nosize="" data-font="NeoTokyo" onclick="setFont('NeoTokyo',1,this);"><p>NeoTokyo</p></li>
+                            <li class="col-xs-3" style="font-family: Monaco;" data-font-id="31" data-desk="70" data-mob="58" data-lineh="87%" data-font-lineh="84" data-nosize="" data-font="Monaco" onclick="setFont('Monaco',0,this);"><p>Monaco</p></li>
+                            <li class="col-xs-3" style="font-family: Waikiki;font-size:120%;" data-desk="70" data-mob="50" data-lineh="87%" data-font-lineh="84" data-font-id="32" data-nosize="" data-font="Waikiki" onclick="setFont('Waikiki',0,this);"><p>Waikiki</p></li>								
+                            <li class="col-xs-3" style="font-family: Bellview; font-size:210%;" data-desk="100" data-mob="88" data-font-id="50" data-lineh="88%" data-font-lineh="87" data-nosize="s,m" data-font="Bellview" onclick="setFont('Bellview',3,this);"><p>Bellview</p></li>  							
+                            <li class="col-xs-3" style="font-family: Loveneon;font-size:100%; font-weight:900" data-desk="60" data-mob="54" data-font-id="38" data-lineh="95%" data-font-lineh="72" data-nosize="s,m" data-font="Loveneon" onclick="setFont('Loveneon',3,this);"><p>Loveneon</p></li>
+                            <li class="col-xs-3" style="font-family: Marquee;font-size:140%;" data-desk="85" data-mob="66" data-lineh="100%" data-font-lineh="102" data-font-id="39" data-nosize="s,m" data-font="Marquee" onclick="setFont('Marquee',3,this);"><p>Marquee</p></li>
+                            <li class="col-xs-3" style="font-family: Mayfair;font-size:160%;position: relative; top: 1px;" data-lineh="95%" data-font-lineh="83.5" data-font-id="40" data-nosize="s,m" data-font="Mayfair" data-desk="76" data-mob="66" onclick="setFont('Mayfair',3,this);"><p>Mayfair</p></li>
+                            <li class="col-xs-3" style="font-family: NeonGlow;" data-desk="75" data-mob="60" data-lineh="100%" data-font-lineh="90" data-nosize="s,m" data-font-id="41" data-font="NeonGlow" onclick="setFont('NeonGlow',3,this);"><p>NeonGlow</p></li>
+                            <li class="col-xs-3" style="font-family: NeonLite;" data-desk="62" data-mob="58" data-lineh="95%" data-font-lineh="74.5" data-nosize="" data-font-id="42" data-font="NeonLite" onclick="setFont('NeonLite',1,this);"><p>NeonLite</p></li>
+                            <li class="col-xs-3" style="font-family: Neontrace;font-size:95%" data-desk="62" data-mob="50" data-lineh="100%" data-font-lineh="87" data-font-id="43" data-nosize="s,m" data-font="Neontrace" onclick="setFont('Neontrace',2,this);"><p>Neontrace</p></li>
+                            <li class="col-xs-3" style="font-family: Nevada; font-size:180%; font-weight:900" data-desk="100" data-mob="88" data-font-id="44" data-lineh="93%" data-font-lineh="90" data-nosize="s,m" data-font="Nevada" onclick="setFont('Nevada',3,this);"><p>Nevada</p></li>              
+                            <li class="col-xs-3" style="font-family: SciFi;font-size:130%;position: relative; top: -3px;" data-lineh="108%" data-font-lineh="60" data-font-id="45" data-nosize="s,m" data-font="SciFi" data-desk="50" data-mob="45" onclick="setFont('SciFi',3,this);"><p>SciFi</p></li>
+								            <!-- dd - Save Design Changes - 22-04-2021 end-->                       
+                                            
+                          </ul>
+                        </div>
+                        <div class="form-group color_style ddd-test">
+                          <label style="text-transform: uppercase;">
+                            Choose Color                         </label>
+                          <ul id="color_table">
+                            <!-- dd - Save Design Changes - 22-04-2021 start -->
+                            <li class="col-xs-2" onclick="setColor('#e1e3e6', this);"><p data-color-title="White" data-color="#e1e3e6" data-color-id="20" style="color: rgb(225, 227, 230); text-shadow: none;"><img src="icons/icon_beyaz.png" alt="beyaz-white-neon-icon"></p><p class="color_name" style="text-shadow: none;">Beyaz</p></li>
+                            <li class="col-xs-2" onclick="setColor('#fffdcf', this);"><p data-color-title="Warm White" data-color="#fffdcf" data-color-id="10" style="color: rgb(255, 253, 207); text-shadow: none;"><img src="icons/icon_gunisigi.png" alt="gun-ısıgı-neon-icon"></p><p class="color_name" style="text-shadow: none;">Gün Işığı</p></li>
+                            <li class="col-xs-2" onclick="setColor('#ff8d02', this);"><p data-color-title="Orange" data-color="#ff8d02" data-color-id="50" style="color: rgb(255, 141, 2); text-shadow: none;"><img src="icons/icon_amber.png" alt="amber-orange-neon-icon"></p><p class="color_name" style="text-shadow: none;">Amber</p></li>
+                            <li class="col-xs-2" onclick="setColor('#cd2e1f', this);"><p data-color-title="Red" data-color="#cd2e1f" data-color-id="70" style="color: rgb(255, 42, 77); text-shadow: none;"><img src="icons/icon_kirmizi.png" alt="kirmizi-red-neon-icon"></p><p class="color_name" style="text-shadow: none;">Kırmızı</p></li>
+                            <li class="col-xs-2" onclick="setColor('#ff5ce8', this);"><p data-color-title="Deep Pink" data-color="#ff5ce8" data-color-id="100" style="color: rgb(255, 92, 232); text-shadow: none;"><img src="icons/icon_pembe.png" width="35" alt="pembe-pink-neon-icon"></p><p class="color_name" style="text-shadow: none;">Pembe</p></li>
+                            <li class="col-xs-2" onclick="setColor('#8c59ff', this);"><p data-color-title="Purple" data-color="#8c59ff" data-color-id="110" style="color: rgb(135, 87, 243); text-shadow: none;"><img src="icons/icon_mor.png" alt="mor-purple-neon-icon"></p><p class="color_name" style="text-shadow: none;">Mor</p></li>
+                            <li class="col-xs-2" onclick="setColor('#0274fc', this);"><p data-color-title="Deep Blue" data-color="#0274fc" data-color-id="120" style="color: rgb(2, 116, 252); text-shadow: none;"><img src="icons/icon_mavi.png" alt="mavi-blue-neon-icon"></p><p class="color_name" style="text-shadow: none;">Mavi</p></li>
+                            <li class="col-xs-2" onclick="setColor('#24b7de', this);"><p data-color-title="Tropical Blue" data-color="#24b7de" data-color-id="140" style="color: rgb(36, 183, 222); text-shadow: none;"><img src="icons/icon_gokmavisi.png" alt="gokmavisi-skyblue-neon-icon"></p><p class="color_name" style="text-shadow: none;">Gök Mavisi</p></li>
+                            <li class="col-xs-2" onclick="setColor('#0bd748', this);"><p data-color-title="Deep Green" data-color="#0bd748" data-color-id="180" style="color: rgb(11, 215, 72); text-shadow: none;"><img src="icons/icon_yesil.png" alt="yesil-green-neon-icon"></p><p class="color_name" style="text-shadow: none;">Yeşil</p></li>
+                            <!-- dd - Save Design Changes - 22-04-2021 end -->
+                          </ul>
+                          <div class="color_topper"></div>
+   
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 demo_box_full visible-xs visible-sm" style="overflow: hidden;padding: 0;">
+                        <div class="slidecontainer">
+                          <div class="col-xs-2">
+                            <label><i class="fa fa-minus"></i></label>
+                          </div>
+                          <div class="col-xs-8">
+                            <input type="range" min="50" max="120" value="85" class="slider" id="myRange" oninput="setSize(this)">
+                          </div>
+                          <div class="col-xs-2">
+                            <label><i class="fa fa-plus"></i></label>
+                          </div>
+                        </div>     
+                      <div class="demo_text" style="background-image: url('images/background/background1.jpg');">
+                        <div class='text_show draggable' style='top: 17%; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 95px; white-space: nowrap; line-height: 115%; text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(255, 92, 232) 0px 0px 20px, rgb(255, 92, 232) 0px 0px 30px, rgb(255, 92, 232) 0px 0px 40px, rgb(255, 92, 232) 0px 0px 55px, rgb(255, 92, 232) 0px 0px 75px;'>Create It Yourself!</div>
+                        <div class="right-handle size-indicator" style='display: none'>
+                          <div class="indicator-container top">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                          <div class="calculated-height"></div>
+                          <div class="indicator-container bottom">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                        </div>
+                        <div class="bottom-handle size-indicator" style='display: none'>
+                          <div class="indicator-container left">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                          <div class="calculated-width"></div>
+                          <div class="indicator-container right">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                        </div>
+                        <a class="demo_on_off offswitch standard" onclick="changeAppearance('demo_box_full');"></a>
+                        <a class="demo_on_off offswitch rush" onclick="rush_changeAppearance('demo_box_full');" style="display: none"></a>
+                        <!-- Carousel -->
+                        <link type="text/css" rel="stylesheet" href="css/magicscroll.css">
+                        <script type="text/javascript" src="js/magicscroll.js"></script>
+                        
+                        <div class="MagicScroll" data-options="height: 100;  mode: cover-flow; draggable: true;" style="width:100%; float:left">
+                          <!-- dd - Save Design Changes - 22-04-2021 start -->
+                          <a onclick="setBG('images/background/bg22.png);" data-id="1">
+                            <img srcset="images/background/bg22.png" src="images/background/bg22.png" alt="see your LED neon sign on a lounge/living room background @ne.onlight" width="100px" height="80px"></a>
+                            <a onclick="setBG('images/background/background2.jpg',2);" data-id="2">
+                              <img srcset="images/background/background2.jpg" src="images/background/background2.jpg" alt="see your LED neon sign on a wedding background @ne.onlight" width="100px" height="80px"></a>
+                              <a onclick="setBG('images/background/background3.jpg',3);" data-id="3">
+                                <img srcset="images/background/background3.jpg" src="images/background/background3.jpg" alt="see your LED neon sign on a restaurant background @ne.onlight" width="100px" height="80px"></a>
+                                <a onclick="setBG('images/background/background4.jpg',4);" data-id="4">
+                                  <img srcset="images/background/background4.jpg" src="images/background/background4.jpg" alt="see your LED neon sign on a kids room background @ne.onlight" width="100px" height="80px"></a>
+                                  <a onclick="setBG('images/background/background5.jpg',5);" data-id="5">
+                                    <img srcset="images/background/background5.jpg" src="images/background/background5.jpg" alt="see your LED neon sign on a bedroom background @ne.onlight" width="100px" height="80px"></a>
+                                    <a onclick="setBG('images/background/background6.jpg',6);" data-id="6">
+                                      <img srcset="images/background/background6.jpg" src="images/background/background6.jpg" alt="see your LED neon sign on a pub/bar background @ne.onlight" width="100px" height="80px"></a>
+                                      <a onclick="setBG('images/background/background7.jpg',7);" data-id="7">
+                                        <img srcset="images/background/background7.jpg" src="images/background/background7.jpg" alt="see your LED neon sign on a feature wall background @ne.onlight" width="100px" height="80px"></a>
+                                        <a onclick="setBG('images/background/background8.jpg',8);" data-id="8">
+                                          <img srcset="images/background/background8.jpg" src="images/background/background8.jpg" alt="see your LED neon sign on a home office background @ne.onlight" width="100px" height="80px"></a>
+                                          <a onclick="setBG('images/background/background1.jpg',1);" data-id="1">
+                                            <img srcset="images/background/background1.jpg" src="images/background/background1.jpg" alt="see your LED neon sign on a lounge/living room background @ne.onlight" width="100px" height="80px"></a>
+                                            <a onclick="setBG('images/background/background2.jpg',2);" data-id="2">
+                                              <img srcset="images/background/background2.jpg" src="images/background/background2.jpg" alt="see your LED neon sign on a wedding background @ne.onlight" width="100px" height="80px"></a>
+                                              <a onclick="setBG('images/background/background3.jpg',3);" data-id="3">
+                                                <img srcset="images/background/background3.jpg" src="images/background/background3.jpg" alt="see your LED neon sign on a restaurant background @ne.onlight" width="100px" height="80px"></a>
+                                                <a onclick="setBG('images/background/background4.jpg',4);" data-id="4">
+                                                  <img srcset="images/background/background4.jpg" src="images/background/background4.jpg" alt="see your LED neon sign on a kids room background @ne.onlight" width="100px" height="80px"></a>
+                                                  <a onclick="setBG('images/background/background5.jpg',5);" data-id="5">
+                                                    <img srcset="images/background/background5.jpg" src="images/background/background5.jpg" alt="see your LED neon sign on a bedroom background @ne.onlight" width="100px" height="80px"></a>
+                                                    <a onclick="setBG('images/background/background6.jpg',6);" data-id="6">
+                                                      <img srcset="images/background/background6.jpg" src="images/background/background6.jpg" alt="see your LED neon sign on a pub/bar background @ne.onlight" width="100px" height="80px">
+                                                    </a>
+                                                    <a onclick="setBG('images/background/background7.jpg',7);" data-id="7">
+                                                      <img srcset="images/background/background7.jpg" src="images/background/background7.jpg" alt="see your LED neon sign on a feature wall background @ne.onlight" width="100px" height="80px">
+                                                    </a>
+                                                    <a onclick="setBG('images/background/background8.jpg',8);" data-id="8">
+                                                      <img srcset="images/background/background8.jpg" src="images/background/background8.jpg" alt="see your LED neon sign on a home office background @ne.onlight" width="100px" height="80px">
+                                                    </a>  
+                                                    <!-- dd - Save Design Changes - 22-04-2021 end -->              
+                                                  </div>  
+                                                  <!-- End Carousel -->
+
+                                                </div>
+
+                                             </div>
+                                             <div style="background: transparent;">
+                                <!--
+                                <div class="back-board-colors-container">
+                                  <div class="back-board-colors-header">Choose a backboard color</div>
+                                  <div class="back-board-text-container">
+                                    <div class="back-board-colors-selected-text">FREE: Standard clear acrylic backboard</div>
+                                    <a class="see-photos clear pull-right" href="images/clearus.jpg" data-lightbox="backboard-color-image">See Photos</a>
+                                    <a class="see-photos white pull-right hide" href="images/whiteus.jpg" data-lightbox="backboard-color-image">See Photos</a>
+                                    <a class="see-photos black pull-right hide" href="images/blackus.jpg" data-lightbox="backboard-color-image">See Photos</a>
+                                    <a class="see-photos silver pull-right hide" href="images/silverus.jpg" data-lightbox="backboard-color-image">See Photos</a>
+                                    <a class="see-photos gold pull-right hide" href="images/goldus.jpg" data-lightbox="backboard-color-image">See Photos</a>
+                                  </div>
+                                  <div class="back-board-colors">
+                                    <img src="images/board/clear.png" alt="" data-color='clear' data-price=0>
+                                    <img src="images/board/white.png" alt="" data-color='white' data-price=10>
+                                    <img src="images/board/black.png" alt="" data-color='black' data-price=10>
+                                    <img src="images/board/silver.png" alt="" data-color='silver' data-price=20>
+                                    <img src="images/board/gold.png" alt="" data-color='gold' data-price=20>
+                                  </div>
+                                </div>
+								-->
+								<div class="back-board-colors-container">
+									<div class="back-board-colors">
+										<img src="images/board/clear.png" alt="" data-color="clear" data-price="0" class="selected" style="display: none">
+									</div>
+								</div>                     
+                          <div class="clearfix"></div>
+
+                        </div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-8 col-md-8-5 visible-lg demo_box_side visible-md" style="overflow: hidden;padding: 0;">
+                      <div class="slidecontainer">
+                        <div class="col-xs-2">
+                          <label><i class="fa fa-minus"></i></label>
+                        </div>
+                        <div class="col-xs-8">
+                          <input type="range" min="70" max="150" value="110" class="slider" id="myRange" oninput="setSize(this)">
+                        </div>
+                        <div class="col-xs-2">
+                          <label><i class="fa fa-plus"></i></label>
+                        </div>
+                      </div>
+                      <div class="demo_text" style="background-image: url('images/background/background1.jpg');"> 
+                        <div class='text_show draggable' style='top: 17%; font-family: Neonscript; font-variant-ligatures: no-common-ligatures; font-size: 95px; white-space: nowrap; line-height: 115%; text-shadow: rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 10px, rgb(255, 92, 232) 0px 0px 20px, rgb(255, 92, 232) 0px 0px 30px, rgb(255, 92, 232) 0px 0px 40px, rgb(255, 92, 232) 0px 0px 55px, rgb(255, 92, 232) 0px 0px 75px;'>Create It Yourself!</div>
+                        <div class="right-handle size-indicator" style='display: none'>
+                          <div class="indicator-container top">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                          <div class="calculated-height"></div>
+                          <div class="indicator-container bottom">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                        </div>
+                        <div class="bottom-handle size-indicator" style='display: none'>
+                          <div class="indicator-container left">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                          <div class="calculated-width"></div>
+                          <div class="indicator-container right">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                          </div>
+                        </div>
+                        <a class="demo_on_off offswitch standard" onclick="changeAppearance('demo_box_side');"></a>
+                        <a class="demo_on_off offswitch rush" onclick="rush_changeAppearance('demo_box_side');" style="display: none"></a>
+                        <!-- Carousel -->
+                        <link type="text/css" rel="stylesheet" href="css/magicscroll.css">
+                        <script type="text/javascript" src="js/magicscroll.js"></script>
+
+                        <div class="MagicScroll" data-options="height: 146;  mode: carousel; draggable: true;" style="width:100%; float:left">
+                          <!-- dd - Save Design Changes - 22-04-2021 start --> 
+                          <a onclick="setBG('images/background/bg22.png',1);" data-id="1"><img srcset="images/background/bg22.png" src="images/background/background2.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background2.jpg',2);" data-id="2"><img srcset="images/background/background2.jpg" src="images/background/background2.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background3.jpg',3);" data-id="3"><img srcset="images/background/background3.jpg" src="images/background/background3.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background4.jpg',4);" data-id="4"><img srcset="images/background/background4.jpg" src="images/background/background4.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background5.jpg',5);" data-id="5"><img srcset="images/background/background5.jpg" src="images/background/background5.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background6.jpg',6);" data-id="6"><img srcset="images/background/background6.jpg" src="images/background/background6.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background7.jpg',7);" data-id="7"><img srcset="images/background/background7.jpg" src="images/background/background7.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background8.jpg',8);" data-id="8"><img srcset="images/background/background8.jpg" src="images/background/background8.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background1.jpg',1);" data-id="1"><img srcset="images/background/background1.jpg" src="images/background/background1.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background2.jpg',2);" data-id="2"><img srcset="images/background/background2.jpg" src="images/background/background2.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background3.jpg',3);" data-id="3"><img srcset="images/background/background3.jpg" src="images/background/background3.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background4.jpg',4);" data-id="4"><img srcset="images/background/background4.jpg" src="images/background/background4.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background5.jpg',5);" data-id="5"><img srcset="images/background/background5.jpg" src="images/background/background5.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background6.jpg',6);" data-id="6"><img srcset="images/background/background6.jpg" src="images/background/background6.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background7.jpg',7);" data-id="7"><img srcset="images/background/background7.jpg" src="images/background/background7.jpg" width="100px" height="80px"></a>
+                          <a onclick="setBG('images/background/background8.jpg',8);" data-id="8"><img srcset="images/background/background8.jpg" src="images/background/background8.jpg" width="100px" height="80px"></a>
+                          <!-- dd - Save Design Changes - 22-04-2021 end --> 
+                        </div>  
+
+                        <!-- End Carousel -->                           
+                        <span id="text_mesure" style="border:1px solid blue;color:white;"></span>
+                      </div>
+               </div>                                
+               <div class="clearfix"></div>
+               <div class="clearfix"></div>
+               <div class="clearfix"></div>
+               <br><br>
+               </div>
+      </div>
+    </section>                  
+               <style>
+                 body, html {height: 100%; width: 100%; }                 
+                .container--small {height: 65vh;padding: 0;margin: 0;position: relative;width: 100%;display: flex;align-items: center;flex-wrap: wrap;}
+                .parallax__container {position: absolute;clip: rect(0, auto, auto, 0);width: 100%;height: 100%;top: 0;left: 0;z-index: -10;}
+                .parallax__container .parallax--bg{background-position: center;background-repeat: no-repeat;background-size: cover;position: fixed;top: 0;
+                  -webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);-webkit-transform-style: preserve-3d;transform-style: preserve-3d;width: 100%;
+                  background-repeat: no-repeat;background-position: center;background-size: cover;}
+                .container--huge {height: 175vh;}
+                .container--big {height: 100vh;}
+                .container--small {height: 65vh;padding: 0;margin: 0;position: relative;width: 100%;display: flex;align-items: center;flex-wrap: wrap; } 
+                .container--random {height: 452px;}
+                .bg1 {background-image: url('images/custom1.jpg');}
+                .bg3 {background-image: url('images/custom3.jpg');} 
+                .bg2 {background-image: url('images/custom2.jpg');} 
+                
+                @media (max-width: 991px){
+                  .bg3 {background-image: url('/create-neon-sign/images/custom3mob.jpg');} 
+                }   
+                .adroll_consent_container {display: none !important;}            
+               </style>  
+
+              
+
+
+    
+
+    
+
+    <script type="text/javascript">
+      if (!Element.prototype.requestFullscreen) {
+	      Element.prototype.requestFullscreen = Element.prototype.mozRequestFullscreen || Element.prototype.webkitRequestFullscreen || Element.prototype.msRequestFullscreen;
+      }
+      // Listen for clicks
+      document.addEventListener('click', function (event) {
+
+        // Check if clicked element is a video thumbnail
+        var videoId = event.target.getAttribute('data-video');
+        if (!videoId) return;
+
+        // Create iframe
+        var iframe = document.createElement('div');
+        iframe.innerHTML = '<p>x</p><iframe width="850" height="447" src="https://www.youtube.com/embed/' + videoId + '?rel=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+        var video = iframe.childNodes[1];
+
+        // Replace the image with the video
+        event.target.parentNode.replaceChild(video, event.target);
+
+        // Enter fullscreen mode
+        //video.requestFullscreen();        
+        
+      }, false);      
+  </script>    
+    
+    <script type="text/javascript">
+
+    // All Php Variables to Javascript;
+    var lettersCount = 8;
+    var ConttonCandy_color_name = 'Deep Pink';
+    var currencySmbl = '$';
+    var NotAvailableSizeIN = '';
+    var NotAvailableSizeCM = 'display:none';
+    var customImgDir = '';
+    var CURRENT_COUNTRY = 'TR';
+    var waterresprice = 39;
+    var wall_mounting_kitvar =  15;
+    var sign_hanging_kitvar = 15;
+    var CUSTOM_THANKYOU = "";
+    var Default_text = "Create It Yourself!";    
+    // <!-- dd - Save Design Changes - 22-04-2021 end --> 
+    var savedFont = "";
+    var savedColor = "";
+    var savedAlignment = "";
+    var savedBackboard = "";
+    var savedBackboardColor = "";
+    var savedSize = "";
+    var savedRushOrder = "";
+    var savedWallMountingKitType = "";
+    // <!-- dd - Save Design Changes - 22-04-2021 end --> 
+
+    ///* dd board prices start */
+    var black_board = 10;
+    var clear_board = 0;
+    var silver_board = 15;
+    var gold_board = 15;
+    var white_board = 10;
+    var mirror_board = 20;
+///* dd board prices end */
+
+    /* Backboard prices */
+    var coloured_backboard_black_white_min_price = 15;
+    var coloured_backboard_black_white_m2_price = 30;
+    var coloured_backboard_gold_silver_min_price = 20;
+    var coloured_backboard_gold_silver_m2_price = 90;
+    var cut_to_letter_min_price = 21;
+    var cut_to_letter_m2_price = 21;
+    var acrylic_stand_min_price = 36;
+    var acrylic_stand_m2_price = 31;
+    var open_box_min_price = 64;
+    var open_box_m2_price = 64;
+
+</script>
+<script src="js/universal-parallax.js"></script>
+
+
+  <script type="text/javascript">
+    var baseMethod = 'get_custom_static';
+  </script>
+  <script src="js/createneonscript_v2.min.js"></script>
+<script type="text/javascript" src="js/multiline.js"></script> <!-- Placeholder text in textareas formatted on to multiple lines-->
+<script src="js/mpDevbridgeAutocomplete.js"></script>
+<script src="js/createneonsearch.min.js"></script>
+
+</div></body>
 </html>
+
