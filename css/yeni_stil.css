@@ -1,97 +1,72 @@
 /* --- 1. GENEL YAPI VE SAYFA DÜZENİ --- */
-body {
+body, .custom.body_m {
     background-color: #2c2c38 !important;
-    font-family: 'Poppins', sans-serif; /* Daha modern bir font */
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Ana yapıyı flexbox ile düzenleyip paneli sağa, önizlemeyi sola alıyoruz */
-.custom.body_m .container {
-    display: flex;
-    flex-direction: row-reverse;
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-}
-
-
-/* --- 2. KONTROL PANELİ (SAĞ TARAF) --- */
+/* Sağdaki kontrol panelinin arka planını ve genel görünümünü ayarlıyoruz */
 .form_wrapper {
     background: white !important;
-    padding: 25px !important;
-    flex: 0 0 420px; /* Panele sabit bir genişlik veriyoruz */
-    overflow-y: auto; /* İçerik taşarsa kaydırma çubuğu çıksın */
-    height: 100vh;
     box-shadow: -5px 0px 20px rgba(0,0,0,0.1);
 }
 
-/* Gereksiz başlık ve logoları gizliyoruz */
+/* Gereksiz başlık ve logoları kaldırıyoruz */
 .top-logo, #heading-section {
     display: none !important;
 }
 
-/* Sekmeli yapıyı iptal edip tüm ayarları alt alta gösteriyoruz */
+/* --- 2. KONTROL PANELİ İÇİNDEKİ AYARLAR --- */
+
+/* Ayar sekmelerini (Text, Font, Color) gizliyoruz */
 .custom_tab {
     display: none;
 }
+
+/* Tüm ayar gruplarını her zaman görünür yapıyoruz */
 .option_group_custom .form-group {
     display: block !important;
+    border-top: 1px solid #f0f0f0; /* Bölümler arasına hafif bir çizgi */
+    padding-top: 25px;
     margin-bottom: 25px;
-    border: none; /* Aradaki çizgileri kaldırıyoruz */
-    padding: 0;
+}
+.option_group_custom .form-group:first-of-type {
+    border-top: none; /* İlk elemanın üstündeki çizgiyi kaldır */
+    padding-top: 5px;
 }
 
-/* Bölüm başlıklarını (Choose Font, Choose Color) düzenliyoruz */
+/* Bölüm başlıklarını (Choose Font vs.) düzenliyoruz */
 .form-group > label {
     font-size: 1.1rem !important;
     font-weight: 600;
     text-transform: uppercase !important;
     margin-bottom: 15px;
-    display: block;
     color: #333;
-}
-.form-group:first-child {
-    border-top: none;
-    padding-top: 0;
-}
-.form-group:first-child::before {
-    content: '1. Choose your text'; /* Başlığı resimdeki gibi ekliyoruz */
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #333;
-}
-.form_wrapper .text_input label {
-    display: none; /* "Input text" label'ını gizle */
 }
 
 /* Metin giriş alanını modernleştiriyoruz */
 textarea#input_text {
-    border: 1px solid #ddd;
     border-radius: 8px;
-    min-height: 90px;
+    border: 1px solid #ccc;
     font-size: 1rem;
-    padding: 10px;
+    padding: 12px;
+}
+.text_input > label {
+    display: none; /* "Input Text" yazısını gizle */
 }
 
-/* Font seçim listesini daha modern bir grid yapısına dönüştürüyoruz */
+/* Font seçimini resimdeki gibi buton grid'ine çeviriyoruz */
 .font_style ul {
-    list-style: none;
-    padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* İki sütunlu yapı */
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
+    padding: 0;
 }
 .font_style li {
-    width: 100% !important;
+    width: 100% !important; /* Genişliği eşitle */
     border: 2px solid #eee;
-    background-color: #f9f9f9;
+    background-color: #f8f9fa;
     border-radius: 8px;
-    text-align: center;
-    padding: 12px 5px !important;
-    cursor: pointer;
+    padding: 10px 5px !important;
     transition: all 0.2s ease;
 }
 .font_style li:hover {
@@ -101,39 +76,38 @@ textarea#input_text {
     background-color: #0d6efd;
     border-color: #0d6efd;
     color: white;
-    font-weight: bold;
 }
 .font_style li p {
     font-size: 1em !important;
-    line-height: 1.2 !important;
     top: 0 !important;
 }
 
-/* Renk seçimini resimdeki gibi yuvarlak renklere çeviriyoruz */
+/* Renk seçimini yuvarlak ikonlara çeviriyoruz */
 #color_table {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    gap: 20px 15px;
     padding: 0;
 }
 #color_table li {
-    width: auto !important;
-    cursor: pointer;
-    position: relative;
-    border: none;
-    transition: all 0.2s;
+    width: 100% !important; /* Konteyner genişliğine uy */
+    height: auto !important;
     padding: 0 !important;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background: none !important;
 }
 #color_table li .color_name {
     text-shadow: none !important;
     color: #555;
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 8px;
 }
-#color_table li:before { /* Renk yuvarlağını oluşturuyoruz */
+
+/* Renk yuvarlağını oluşturmak için sahte element kullanıyoruz */
+#color_table li::before {
     content: '';
     display: block;
     width: 45px;
@@ -141,84 +115,50 @@ textarea#input_text {
     border-radius: 50%;
     border: 2px solid #e0e0e0;
     transition: all 0.2s;
+    cursor: pointer;
 }
-#color_table li:hover:before {
+#color_table li:hover::before {
     transform: scale(1.1);
-    border-color: #0d6efd;
 }
-#color_table li.active:before {
+#color_table li.active::before {
     border-color: #0d6efd;
     box-shadow: 0 0 10px rgba(13, 110, 253, 0.6);
 }
 
-/* Renkleri atıyoruz (resim ve p etiketlerini gizleyip :before elementini renklendiriyoruz) */
+/* Renkleri atıyoruz ve eski ikonları gizliyoruz */
 #color_table li p, #color_table li img { display: none; }
-#color_table li:nth-child(1):before { background-color: #e1e3e6; } /* Beyaz */
-#color_table li:nth-child(2):before { background-color: #fffdcf; } /* Gün Işığı */
-#color_table li:nth-child(3):before { background-color: #ff8d02; } /* Amber */
-#color_table li:nth-child(4):before { background-color: #cd2e1f; } /* Kırmızı */
-#color_table li:nth-child(5):before { background-color: #ff5ce8; } /* Pembe */
-#color_table li:nth-child(6):before { background-color: #8c59ff; } /* Mor */
-#color_table li:nth-child(7):before { background-color: #0274fc; } /* Mavi */
-#color_table li:nth-child(8):before { background-color: #24b7de; } /* Gök Mavisi */
-#color_table li:nth-child(9):before { background-color: #0bd748; } /* Yeşil */
+#color_table li .color_name { display: block; } /* Sadece isimler görünsün */
 
+#color_table li:nth-child(1)::before { background-color: #e1e3e6; } /* Beyaz */
+#color_table li:nth-child(2)::before { background-color: #fffdcf; } /* Gün Işığı */
+#color_table li:nth-child(3)::before { background-color: #ff8d02; } /* Amber */
+#color_table li:nth-child(4)::before { background-color: #cd2e1f; } /* Kırmızı */
+#color_table li:nth-child(5)::before { background-color: #ff5ce8; } /* Pembe */
+#color_table li:nth-child(6)::before { background-color: #8c59ff; } /* Mor */
+#color_table li:nth-child(7)::before { background-color: #0274fc; } /* Mavi */
+#color_table li:nth-child(8)::before { background-color: #24b7de; } /* Gök Mavisi */
+#color_table li:nth-child(9)::before { background-color: #0bd748; } /* Yeşil */
 
 /* --- 3. ÖNİZLEME ALANI (SOL TARAF) --- */
-.demo_box_side {
-    flex-grow: 1; /* Kalan tüm alanı kaplasın */
-    height: 100vh;
-    padding: 0 !important;
-    position: relative;
-    overflow: hidden;
-}
 
-/* Arka planı sabit koyu renk yapıyoruz */
+/* Arka planı koyu ve sabit hale getiriyoruz */
 .demo_box_side .demo_text {
     background-image: none !important;
-    background-color: #2c2c38;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #2c2c38 !important;
 }
 
-/* Boyut ayarlama slider'ı ve resim karuselini gizliyoruz */
+/* Önizleme alanındaki gereksiz slider ve resim galerisini gizliyoruz */
 .demo_box_side .slidecontainer, .demo_box_side .MagicScroll {
-    display: none;
+    display: none !important;
 }
 
-/* Işık efektini resimdeki gibi 'Cream White' yapıyoruz */
+/* Neon yazıya istediğimiz efekti veriyoruz */
 .text_show {
-    /* JavaScript'ten gelen stili ezmek için !important kullanıyoruz */
     color: #FFF5E1 !important;
     text-shadow:
         0 0 7px #FFF5E1,
         0 0 10px #FFF5E1,
         0 0 21px #FFF5E1,
         0 0 42px #e7cda8,
-        0 0 82px #e7cda8,
-        0 0 92px #e7cda8,
-        0 0 102px #e7cda8,
-        0 0 151px #e7cda8 !important;
-}
-
-/* Resimdeki boyut göstergelerini CSS ile ekliyoruz (değerler sabit kalacak) */
-.demo_box_side::before {
-    content: '9cm';
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-    color: #aaa;
-    font-size: 1rem;
-}
-.demo_box_side::after {
-    content: '61cm';
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #aaa;
-    font-size: 1rem;
+        0 0 82px #e7cda8 !important;
 }
