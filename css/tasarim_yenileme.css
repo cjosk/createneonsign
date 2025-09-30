@@ -1,0 +1,175 @@
+/* SIFIRDAN TASARIM YENİLEME CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- 1. TEMEL VE LAYOUT AYARLARI --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; /* Sayfanın kaymasını engelle */
+}
+
+/* Ana konteyneri Flexbox ile modern bir yapıya kavuşturuyoruz */
+.container {
+    display: flex;
+    flex-direction: row-reverse; /* Paneli sağa al */
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Sol ve Sağ Panellerin Temel Ayarları */
+.sol-panel-onizleme {
+    flex-grow: 1; /* Kalan tüm alanı kapla */
+    background-color: #2c2c38;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.sag-panel-kontrol {
+    flex: 0 0 420px; /* Sabit genişlik */
+    background-color: white !important;
+    padding: 25px;
+    overflow-y: auto; /* İçerik taşarsa kaydır */
+    height: 100vh;
+    box-shadow: -5px 0px 20px rgba(0,0,0,0.1);
+}
+
+/* Orijinal Bootstrap class'larının float gibi özelliklerini sıfırlıyoruz */
+[class*="col-md-"] {
+    width: auto;
+    float: none;
+}
+
+/* --- 2. KONTROL PANELİ (SAĞ) --- */
+.top-logo, #heading-section, .custom_tab {
+    display: none !important; /* Gereksiz her şeyi gizle */
+}
+
+.option_group_custom .form-group {
+    display: block !important;
+    padding: 20px 0;
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.option_group_custom .form-group:last-of-type {
+    border-bottom: none;
+}
+
+.form-group > label {
+    font-size: 1.1rem !important;
+    font-weight: 600;
+    text-transform: uppercase !important;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+textarea#input_text {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* Font Seçimi */
+.font_style ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+.font_style li {
+    border: 2px solid #eee;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 5px !important;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+.font_style li:hover { border-color: #90c5ff; }
+.font_style li.active { background-color: #0d6efd; border-color: #0d6efd; color: white; }
+.font_style li p { font-size: 1em !important; top: 0 !important; position: relative !important; }
+
+/* Renk Seçimi */
+#color_table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    gap: 20px 15px;
+    padding: 0;
+    list-style: none;
+}
+#color_table li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none !important;
+}
+#color_table li .color_name { text-shadow: none !important; color: #555; font-size: 12px; margin-top: 8px; }
+#color_table li::before {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+#color_table li:hover::before { transform: scale(1.1); }
+#color_table li.active::before { border-color: #0d6efd; box-shadow: 0 0 10px rgba(13, 110, 253, 0.6); }
+
+#color_table li p, #color_table li img { display: none; }
+#color_table li .color_name { display: block; }
+
+#color_table li:nth-child(1)::before { background-color: #e1e3e6; }
+#color_table li:nth-child(2)::before { background-color: #fffdcf; }
+#color_table li:nth-child(3)::before { background-color: #ff8d02; }
+#color_table li:nth-child(4)::before { background-color: #cd2e1f; }
+#color_table li:nth-child(5)::before { background-color: #ff5ce8; }
+#color_table li:nth-child(6)::before { background-color: #8c59ff; }
+#color_table li:nth-child(7)::before { background-color: #0274fc; }
+#color_table li:nth-child(8)::before { background-color: #24b7de; }
+#color_table li:nth-child(9)::before { background-color: #0bd748; }
+
+/* --- 3. ÖNİZLEME ALANI (SOL) --- */
+.demo_box_side .demo_text {
+    width: 100%;
+    height: 100%;
+    background-image: none !important;
+    background-color: #2c2c38 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.demo_box_side .slidecontainer, .demo_box_side .MagicScroll {
+    display: none !important;
+}
+
+.text_show {
+    color: #FFF5E1 !important;
+    text-shadow:
+        0 0 7px #FFF5E1,
+        0 0 10px #FFF5E1,
+        0 0 21px #FFF5E1,
+        0 0 42px #e7cda8,
+        0 0 82px #e7cda8 !important;
+}
+
+/* Mobil cihazlar için gizlenen elemanları görünür yapıyoruz (gerekirse) */
+.visible-lg.demo_box_side {
+    display: flex !important;
+}
